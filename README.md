@@ -1,127 +1,264 @@
-# Article Assessment
+# Frontend Technology Assessment
 
-<div align="center">
-  <h2>Article Assessment</h2>
+Build a simple app to hit the NY Times Most Popular Articles API and show a list of articles
+that shows details when items on the list are tapped (a typical master/detail web app).
 
-</div>
+## Environment Variables
 
-## Features
+To run this project, you will need to add the following environment variables to your .env file
 
-This repository is 🔋 battery packed with:
+`NEXT_PUBLIC_API_URL` #backend url
 
-- ⚡️ Next.js 14 with App Router
-- ⚛️ React 18
-- ✨ TypeScript
-- 💨 Tailwind CSS 3 — Configured with CSS Variables to extend the **primary** color
-- 💎 Pre-built Components — Components that will **automatically adapt** with your brand color, [check here for the demo](https://tsnext-tw.thcl.dev/components)
-- 🃏 Jest — Configured for unit testing
-- 📈 Absolute Import and Path Alias — Import components using `@/` prefix
-- 📏 ESLint — Find and fix problems in your code, also will **auto sort** your imports
-- 💖 Prettier — Format your code consistently
-- 🐶 Husky & Lint Staged — Run scripts on your staged files before they are committed
-- 🤖 Conventional Commit Lint — Make sure you & your teammates follow conventional commit
-- ⏰ Release Please — Generate your changelog by activating the `release-please` workflow
-- 👷 Github Actions — Lint your code on PR
-- 🚘 Automatic Branch and Issue Autolink — Branch will be automatically created on issue **assign**, and auto linked on PR
-- 🔥 Snippets — A collection of useful snippets
-- 👀 Open Graph Helper Function — Awesome open graph generated using [og](https://github.com/theodorusclarence/og), fork it and deploy!
-- 🗺 Site Map — Automatically generate sitemap.xml
-- 📦 Expansion Pack — Easily install common libraries, additional components, and configs.
+`NEXT_PUBLIC_API_KEY` #NY ApiKey
 
-See the 👉 [feature details and changelog](https://github.com/theodorusclarence/ts-nextjs-tailwind-starter/blob/main/CHANGELOG.md) 👈 for more.
+## Installation
 
-You can also check all of the **details and demos** on my blog post:
+Install Dependencies with pnpm or yarn
 
-- [One-stop Starter to Maximize Efficiency on Next.js & Tailwind CSS Projects](https://theodorusclarence.com/blog/one-stop-starter)
+```bash
+  pnpm install
+  pnpm perpare
+```
 
-## Getting Started
+Check eslint
 
-### 1. Clone this template using one of the three ways
+```bash
+  pnpm lint:fix
+```
 
-1. Use this repository as template
+## Run Locally
 
-   **Disclosure:** by using this repository as a template, there will be an attribution on your repository.
+Clone the project
 
-   I'll appreciate if you do, so this template can be known by others too 😄
+```bash
+ git clone git@github.com:abd-9/articles-assessment.git
+```
 
-   ![Use as template](https://user-images.githubusercontent.com/55318172/129183039-1a61e68d-dd90-4548-9489-7b3ccbb35810.png)
-
-2. Using `create-next-app`
-
-   ```bash
-   pnpm create next-app  -e https://github.com/theodorusclarence/ts-nextjs-tailwind-starter ts-pnpm
-   ```
-
-   If you still want to use **pages directory** (_is not actively maintained_) you can use this command
-
-   ```bash
-   npx create-next-app -e https://github.com/theodorusclarence/ts-nextjs-tailwind-starter/tree/pages-directory project-name
-   ```
-
-3. Using `degit`
-
-   ```bash
-   npx degit theodorusclarence/ts-nextjs-tailwind-starter YOUR_APP_NAME
-   ```
-
-4. Deploy to Vercel
-
-   [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https%3A%2F%2Fgithub.com%2Ftheodorusclarence%2Fts-nextjs-tailwind-starter)
-
-### 2. Install dependencies
-
-It is encouraged to use **pnpm** so the husky hooks can work properly.
+Install dependencies
 
 ```bash
 pnpm install
 ```
 
-### 3. Run the development server
-
-You can start the server using this command:
+Start the server
 
 ```bash
 pnpm dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result. You can start editing the page by modifying `src/pages/index.tsx`.
+## Running Tests
 
-### 4. Change defaults
+To run tests, run the following command
 
-There are some things you need to change including title, urls, favicons, etc.
+```bash
+  pnpm test
 
-Find all comments with !STARTERCONF, then follow the guide.
+```
 
-Don't forget to change the package name in package.json
+To run tests with covering report
 
-### 5. Commit Message Convention
+```bash
+ pnpm test:cover
+```
 
-This starter is using [conventional commits](https://www.conventionalcommits.org/en/v1.0.0/), it is mandatory to use it to commit changes.
+## Build
 
-## Projects using ts-nextjs-tailwind-starter
+To run tests, run the following command
 
-<!--
-TEMPLATE
-- [sitename](https://sitelink.com) ([Source](https://github.com/githublink))
-- [sitename](https://sitelink.com)
--->
+```bash
+  pnpm build
+  pnpm start  # to run production version locally
+```
 
-- [theodorusclarence.com](https://theodorusclarence.com) ([Source](https://github.com/theodorusclarence/theodorusclarence.com))
-- [Notiolink](https://notiolink.thcl.dev/) ([Source](https://github.com/theodorusclarence/notiolink))
-- [NextJs + Materia UI + Typescript](https://github.com/AlexStack/nextjs-materia-mui-typescript-hook-form-scaffold-boilerplate-starter)
+## Technology Stack
 
-Are you using this starter? Please add your page (and repo) to the end of the list via a [Pull Request](https://github.com/theodorusclarence/ts-nextjs-tailwind-starter/edit/main/README.md). 😃
+- ⚡️ Next.js 14 with App Router
+- ⚛️ React 18
+- ✨ TypeScript
+- ⚛️ React Query - React hooks
+- 📏 Axios
+- 💨 Tailwind CSS 3 — Configured with CSS Variables to extend the **primary** color
 
-## Expansion Pack 📦
+- 🃏 Jest — Configured for unit testing
+- 📈 Absolute Import and Path Alias — Import components using `@/` prefix
+- 📏 ESLint — Find and fix problems in your code, also will **auto sort** your imports
+- 💖 Prettier — Format your code consistently
+- 🐶 Husky & Lint Staged — Run scripts on your staged files before they are committed
+- 🤖 Conventional Commit Lint — Make sure you & your teammates follow
+- 👷 Github Actions — Lint your code on PR
 
-This starter is now equipped with an [expansion pack](https://github.com/theodorusclarence/expansion-pack).
+## Page Component Structure
 
-You can easily add expansion such as React Hook Form + Components, Storybook, and more just using a single command line.
+The project adheres to the Container/Presentational design pattern. The page.tsx files act as containers, while components under components and logic under hooks manage presentational and stateful components respectively.
 
-<https://user-images.githubusercontent.com/55318172/146631994-e1cac137-1664-4cfe-950b-a96decc1eaa6.mp4>
+Example of a custom hook (hooks/article.ts):
 
-Check out the [expansion pack repository](https://github.com/theodorusclarence/expansion-pack) for the commands
+```javascript
+import { useQuery } from '@tanstack/react-query';
 
-### App Router Update
+import { articleApi } from '@/services/api';
 
-Due to App Router update, the expansion pack is currently **outdated**. It will be updated in the future. You can still use them by copy and pasting the files.
+export default function useArticles() {
+  const {
+    data,
+    isFetching: isLoading,
+    error: isError,
+  } = useQuery({
+    queryKey: ['articles'],
+    queryFn: () => articleApi.getArticles(),
+    select: (data) => data, // for data formating
+    initialData: { result: [], kind: 'ok' },
+    refetchOnWindowFocus: false,
+  });
+
+  return {
+    isLoading,
+    isError,
+    list: data.kind == 'ok' ? data?.result : [],
+  };
+}
+```
+
+```
+├───app
+│   │
+│   └───articles
+│       │   layout.tsx    # layout for the articles page
+│       │   page.tsx
+│       │
+│       ├───components    # includes all components related to article page
+│       │       ArticleCard.tsx
+│       │       ArticleList.tsx
+│       │
+│       └───hooks
+│               article.ts
+│
+
+```
+
+## Folder Structure
+
+```
+├───app
+│   │   error.tsx         # global error
+│   │   layout.tsx        # global layout
+│   │   not-found.tsx
+│   │   page.tsx
+│   │   Providers.tsx     # includes all providers such as react query
+│   │
+│   │
+│   └───articles
+│       │   layout.tsx    # layout for the articles page
+│       │   page.tsx
+│       │
+│       ├───components    # includes all components related to article page
+│       │       ArticleCard.tsx
+│       │       ArticleList.tsx
+│       │
+│       └───hooks
+│               article.ts
+│
+├───components
+│   │   Accent.tsx
+│   │   ContentPlaceholder.tsx
+│   │   NextImage.tsx
+│   │   Skeleton.tsx
+│   │   Tag.tsx
+│   │
+│   ├───buttons
+│   │       Button.tsx
+│   │       IconButton.tsx
+│   ├───form
+│   │       StyledInput.tsx
+│   │
+│   ├───images
+│   │       CloudinaryImg.tsx
+│   │       NextImage.tsx
+│   ├───layout
+│   │       Header.tsx
+│   │       Layout.tsx
+│   │
+│   └───links
+│           ArrowLink.tsx
+│           ButtonLink.tsx
+│
+├───constant
+│       config.ts
+│       env.ts
+│
+├───lib
+│   │   env.ts
+│   │   helper.ts
+│   │   logger.ts
+│   │   og.ts
+│   │   utils.ts
+│   │
+│   └───__tests__
+│           og.test.ts
+│
+├───services
+│   └───api
+│       │   api.ts
+│       │   api.types.ts
+│       │   apiProblem.test.ts
+│       │   apiProblem.ts
+│       │   index.ts
+│       │
+│       └───article
+│               article.ts
+│               article.types.ts
+│               urls.ts
+│
+├───styles
+│       colors.css
+│       globals.css
+│       nprogress.css
+│
+├───__mocks__
+│       mockEnvVariables.js
+│       svg.tsx
+│
+└───__tests__
+    ├───app
+    │   └───articles
+    │       ├───components
+    │       │       ArticleCard.test.tsx
+    │       │       ArticleList.test.tsx
+    │       │
+    │       └───hooks
+    └───pages
+            HomePage.test.tsx
+```
+
+## Test Reports coverages
+
+| File                    | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s |
+| ----------------------- | ------- | -------- | ------- | ------- | ----------------- |
+| All files               | 93.75   | 75       | 78.94   | 93.5    |
+| app                     | 100     | 100      | 100     | 100     |
+| page.tsx                | 100     | 100      | 100     | 100     |
+| app/articles/components | 100     | 75       | 75      | 100     |
+| ArticleCard.tsx         | 100     | 100      | 100     | 100     |
+| ArticleList.tsx         | 100     | 75       | 66.66   | 100     | 28                |
+| components              | 100     | 0        | 100     | 100     |
+| Accent.tsx              | 100     | 100      | 100     | 100     |
+| ContentPlaceholder.tsx  | 100     | 0        | 100     | 100     | 4                 |
+| components/buttons      | 90      | 50       | 66.66   | 88.88   |
+| ThemeButton.tsx         | 90      | 50       | 66.66   | 88.88   | 25                |
+| components/layout       | 93.75   | 57.14    | 80      | 93.75   |
+| Header.tsx              | 93.75   | 57.14    | 80      | 93.75   | 19                |
+| components/links        | 100     | 66.66    | 100     | 100     |
+| UnstyledLink.tsx        | 100     | 66.66    | 100     | 100     | 17-19             |
+| lib                     | 80      | 100      | 50      | 80      |
+| og.ts                   | 100     | 100      | 100     | 100     |
+| utils.ts                | 50      | 100      | 0       | 50      | 5-6               |
+| services/api            | 93.33   | 100      | 100     | 93.33   |
+| apiProblem.ts           | 93.33   | 100      | 100     | 93.33   | 32                |
+
+```
+Test Suites: 5 passed, 5 total
+Tests:       18 passed, 18 total
+Snapshots:   0 total
+Time:        6.669 s
+Ran all test suites.
+```

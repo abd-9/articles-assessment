@@ -27,39 +27,6 @@ export class Api {
       },
     });
   }
-
-  // async getEpisodes(): Promise<
-  //   { kind: 'ok'; episodes: EpisodeSnapshotIn[] } | GeneralApiProblem
-  // > {
-  //   try {
-  //     const response: AxiosResponse<ApiFeedResponse> =
-  //       await this.axiosInstance.get(
-  //         `api.json?rss_url=https%3A%2F%2Ffeeds.simplecast.com%2FhEI_f9Dx`
-  //       );
-
-  //     // the typical ways to die when calling an api
-  //     if (response.status !== 200) {
-  //       const problem = getGeneralApiProblem(response);
-  //       if (problem) return problem;
-  //     }
-
-  //     // transform the data into the format we are expecting
-  //     const rawData = response.data;
-
-  //     // This is where we transform the data into the shape we expect for our MST model.
-  //     const episodes: EpisodeSnapshotIn[] =
-  //       rawData?.items.map((raw) => ({
-  //         ...raw,
-  //       })) ?? [];
-
-  //     return { kind: 'ok', episodes };
-  //   } catch (e) {
-  //     if (isLocal && e instanceof Error) {
-  //       console.error(`Bad data: ${e.message}\n${e.response?.data}`, e.stack);
-  //     }
-  //     return { kind: 'bad-data' };
-  //   }
-  // }
 }
 
 // Singleton instance of the API for convenience
