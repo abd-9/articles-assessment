@@ -15,9 +15,16 @@ export default function useArticles() {
     refetchOnWindowFocus: false,
   });
 
+  const getSelectArticleById = (id: string): IArticle | null => {
+    if (data.kind == 'ok')
+      return data.result.find((_) => _.id.toString() == id) || null;
+    return null;
+  };
+
   return {
     isLoading,
     isError,
+    getSelectArticleById,
     list: data.kind == 'ok' ? data?.result : [],
   };
 }

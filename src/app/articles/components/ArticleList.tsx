@@ -23,7 +23,7 @@ const ArticleList: React.FC<ArticleListProps> = ({ articles, isLoading }) => {
             postDate={post.published_date}
             description={post.abstract}
             onClick={() => {}}
-            routeUrl=''
+            routeUrl={`/articles/${post.id}`}
             mediaAlt={post.title}
             thumbnailUrl={post.media?.[0]?.['media-metadata']?.[2]?.url || ''}
             title={post.title}
