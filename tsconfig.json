@@ -17,7 +17,7 @@
       "jest",
       "@types/testing-library__react",
       "node",
-     "@testing-library/jest-dom"  
+      "@testing-library/jest-dom"
     ],
     "isolatedModules": true,
     "jsx": "preserve",

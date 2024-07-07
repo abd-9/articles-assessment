@@ -17,18 +17,17 @@ type ArticleCardProps = {
 };
 
 export default function ArticleCard({
-  id,
   thumbnailUrl,
   title,
   description,
   postDate,
   routeUrl,
   className,
-  mediaAlt,
   onClick,
 }: ArticleCardProps) {
   return (
     <li
+      data-testid='article-card'
       className={clsx(
         'w-full rounded-md border border-gray-300 bg-white dark:border-gray-600 dark:bg-dark',
         'scale-100 hover:scale-[1.02] active:scale-[0.97] motion-safe:transform-gpu',
@@ -45,6 +44,7 @@ export default function ArticleCard({
       >
         <div className='relative h-40 w-full'>
           <div
+            data-testid='card-image'
             className='pointer-events-none overflow-hidden rounded-t-md absolute bg-cover bg-center w-full h-full'
             style={{ backgroundImage: `url(${thumbnailUrl})` }}
           />

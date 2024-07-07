@@ -1,6 +1,7 @@
 import * as React from 'react';
 
 import '@/styles/colors.css';
+
 import Layout from '@/components/layout/Layout';
 
 export default function ComponentsLayout({

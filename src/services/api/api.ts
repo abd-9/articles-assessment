@@ -1,11 +1,13 @@
-import axios, { AxiosInstance, AxiosResponse } from 'axios';
-import type { ApiConfig, ApiFeedResponse } from './api.types';
+import axios, { AxiosInstance } from 'axios';
+
 import { siteConfig } from '@/constant/config';
 
+import type { ApiConfig } from './api.types';
+
 export const DEFAULT_API_CONFIG: ApiConfig = {
-  url: siteConfig.url!!,
+  url: siteConfig.url!,
   timeout: 10000,
-  apiKey: siteConfig.appKey!!,
+  apiKey: siteConfig.appKey!,
 };
 
 export class Api {

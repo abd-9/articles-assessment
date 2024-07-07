@@ -1,7 +1,9 @@
 'use clinet';
 import React from 'react';
-import ArticleCard from '@/app/articles/components/ArticleCard';
+
 import ContentPlaceholder from '@/components/ContentPlaceholder';
+
+import ArticleCard from '@/app/articles/components/ArticleCard';
 
 interface ArticleListProps {
   articles: IArticle[];
@@ -12,7 +14,7 @@ const ArticleList: React.FC<ArticleListProps> = ({ articles, isLoading }) => {
   return (
     <ul className='mt-4 grid gap-4 sm:grid-cols-2 xl:grid-cols-3' data-fade='5'>
       {isLoading ? (
-        <ContentPlaceholder />
+        <ContentPlaceholder msg='loading...' />
       ) : articles.length > 0 ? (
         articles.map((post, index) => (
           <ArticleCard

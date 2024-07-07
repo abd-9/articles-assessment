@@ -1,10 +1,12 @@
 'use client';
 import { AxiosError, AxiosResponse } from 'axios';
-import { GeneralApiProblem, getGeneralApiProblem } from '../apiProblem';
-import type { ApiConfig } from '../api.types';
-import { DEFAULT_API_CONFIG, Api } from '../api';
-import { ARTICLE_URLS } from '@/services/api/article/urls';
+
 import { isLocal } from '@/constant/env';
+import { ARTICLE_URLS } from '@/services/api/article/urls';
+
+import { Api, DEFAULT_API_CONFIG } from '../api';
+import type { ApiConfig } from '../api.types';
+import { GeneralApiProblem, getGeneralApiProblem } from '../apiProblem';
 
 export class ArticleApi extends Api {
   constructor(config: ApiConfig = DEFAULT_API_CONFIG) {

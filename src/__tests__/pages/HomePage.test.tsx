@@ -1,23 +1,22 @@
-import HomePage from '@/app/page';
 import { render, screen } from '@testing-library/react';
-import { act } from 'react';
-export function mockFetch(data: unknown) {
-  return jest.fn().mockImplementation(() =>
-    Promise.resolve({
-      ok: true,
-      json: () => data,
-    })
-  );
-}
 
-// describe('Homepage', () => {
-//   it('renders the Components', async () => {
-//     await act(async () => {
-//       window.fetch = mockFetch({});
-//       render(<HomePage />);
-//     });
+import HomePage from '@/app/page';
 
-//     const heading = screen.getByTestId('main-header');
-//     expect(heading).toBeInTheDocument();
-//   });
-// });
+describe('HomePage', () => {
+  it('renders main header with correct text', () => {
+    render(<HomePage />);
+
+    const mainHeader = screen.getByTestId('main-header');
+    expect(mainHeader).toBeInTheDocument();
+    expect(mainHeader).toHaveTextContent('Frontend Technology Assessment');
+  });
+
+  it('renders paragraph with correct text', () => {
+    render(<HomePage />);
+
+    const paragraph = screen.getByText(
+      /Build a simple app to hit the NY Times Most Popular Articles API/i
+    );
+    expect(paragraph).toBeInTheDocument();
+  });
+});

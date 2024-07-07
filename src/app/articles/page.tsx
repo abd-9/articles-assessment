@@ -1,12 +1,14 @@
 'use client';
 
-import React, { useState } from 'react';
-import useArticles from '@/app/articles/hooks/article';
-import StyledInput from '@/components/form/StyledInput';
-import ContentPlaceholder from '@/components/ContentPlaceholder';
 import clsx from 'clsx';
+import React, { useState } from 'react';
+
 import Accent from '@/components/Accent';
+import ContentPlaceholder from '@/components/ContentPlaceholder';
+import StyledInput from '@/components/form/StyledInput';
+
 import ArticleList from '@/app/articles/components/ArticleList';
+import useArticles from '@/app/articles/hooks/article';
 
 const ArticlesContainer: React.FC = () => {
   const [search, setSearch] = useState<string>('');

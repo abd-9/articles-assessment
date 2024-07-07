@@ -4,11 +4,12 @@ import * as React from 'react';
 import '@/styles/globals.css';
 import '@/styles/colors.css';
 import '@/styles/nprogress.css';
-import { siteConfig } from '@/constant/config';
+
 import Providers from '@/app/Providers';
+import { siteConfig } from '@/constant/config';
 
 export const metadata: Metadata = {
-  metadataBase: new URL(siteConfig?.url!!),
+  metadataBase: new URL(siteConfig?.url!),
   title: {
     default: siteConfig.title,
     template: `%s | ${siteConfig.title}`,

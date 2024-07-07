@@ -1,4 +1,4 @@
-import { AxiosError, AxiosResponse } from 'axios';
+import { AxiosError } from 'axios';
 
 export type GeneralApiProblem =
   | { kind: 'timeout'; temporary: true }
