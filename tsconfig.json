@@ -11,7 +11,14 @@
     "module": "esnext",
     "moduleResolution": "node",
     "resolveJsonModule": true,
-    "types": ["next/typescript"],
+    "types": [
+      "next/typescript",
+      "@types/jest",
+      "jest",
+      "@types/testing-library__react",
+      "node",
+     "@testing-library/jest-dom"  
+    ],
     "isolatedModules": true,
     "jsx": "preserve",
     "baseUrl": ".",

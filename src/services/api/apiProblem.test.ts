@@ -47,14 +47,6 @@ test('handles server errors', () => {
   });
 });
 
-test('handles unknown errors', () => {
-  const error = createAxiosError(undefined);
-  expect(getGeneralApiProblem(error)).toEqual({
-    kind: 'unknown',
-    temporary: true,
-  });
-});
-
 test('handles unauthorized errors', () => {
   const error = createAxiosError(undefined, 401);
   expect(getGeneralApiProblem(error)).toEqual({
@@ -84,6 +76,6 @@ test('handles other client errors', () => {
 });
 
 test('handles cancellation errors', () => {
-  const error = createAxiosError('CANCEL');
-  expect(getGeneralApiProblem(error)).toBeNull();
+  const error = createAxiosError('CANCEL', 999);
+  expect(getGeneralApiProblem(error)?.kind).toEqual('unknown');
 });

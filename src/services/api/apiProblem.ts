@@ -25,7 +25,7 @@ export function getGeneralApiProblem(
 
   if (!error.response) {
     // No response from server
-    if (error.message === 'Network Error') {
+    if (error.message === 'Error message') {
       return { kind: 'cannot-connect', temporary: true };
     }
 

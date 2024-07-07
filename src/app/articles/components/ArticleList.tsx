@@ -28,7 +28,7 @@ const ArticleList: React.FC<ArticleListProps> = ({ articles, isLoading }) => {
           />
         ))
       ) : (
-        <ContentPlaceholder />
+        <ContentPlaceholder msg='Loadin...' />
       )}
     </ul>
   );
