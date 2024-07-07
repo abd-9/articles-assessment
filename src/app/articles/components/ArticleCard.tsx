@@ -4,8 +4,6 @@ import * as React from 'react';
 
 import UnstyledLink from '@/components/links/UnstyledLink';
 
-import NextImage from '@/components/NextImage';
-
 type ArticleCardProps = {
   id: number;
   thumbnailUrl: string;
@@ -59,16 +57,7 @@ export default function ArticleCard({
         </div>
         <div className='p-4'>
           <h4 className='text-gray-800 dark:text-gray-100'>{title}</h4>
-          {/* <div className='mt-2 flex items-center justify-start gap-2 text-sm font-medium text-gray-600 dark:text-gray-300'>
-            <div className='flex items-center gap-1'>
-              <HiOutlineClock className='inline-block text-base' />
-              <Accent>{post.readingTime.text}</Accent>
-            </div>
-            <div className='flex items-center gap-1'>
-              <HiOutlineEye className='inline-block text-base' />
-              <Accent>{post?.views?.toLocaleString() ?? '–––'} views</Accent>
-            </div>
-          </div> */}
+
           <p className='mb-2 mt-4 text-sm text-gray-600 dark:text-gray-300'>
             <span className='font-bold text-gray-800 dark:text-gray-100'>
               {format(new Date(postDate), 'MMMM dd, yyyy')}

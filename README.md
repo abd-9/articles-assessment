@@ -1,4 +1,4 @@
-# Next.js + Tailwind CSS + TypeScript Starter and Boilerplate
+# Article Assessment
 
 <div align="center">
   <h2>Article Assessment</h2>

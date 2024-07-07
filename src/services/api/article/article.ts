@@ -1,4 +1,5 @@
-import axios, { AxiosError, AxiosResponse } from 'axios';
+'use client';
+import { AxiosError, AxiosResponse } from 'axios';
 import { GeneralApiProblem, getGeneralApiProblem } from '../apiProblem';
 import type { ApiConfig } from '../api.types';
 import { DEFAULT_API_CONFIG, Api } from '../api';
@@ -48,7 +49,7 @@ export class ArticleApi extends Api {
   ): Promise<{ kind: 'ok'; article?: IArticle } | GeneralApiProblem> {
     try {
       const response: AxiosResponse<IApiArticleDetailsResponse> =
-        await this.axiosInstance.get(`article/${id}`);
+        await this.axiosInstance.get(ARTICLE_URLS.article, { params: { id } });
 
       const article: IArticle = response.data.result;
       return { kind: 'ok', article };

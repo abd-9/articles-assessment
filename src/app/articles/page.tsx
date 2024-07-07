@@ -1,35 +1,35 @@
 'use client';
 
-import ArticleCard from '@/app/articles/components/ArticleCard';
-import Accent from '@/components/Accent';
-import ContentPlaceholder from '@/components/ContentPlaceholder';
-import Button from '@/components/buttons/Button';
-import StyledInput from '@/components/form/StyledInput';
+import React, { useState } from 'react';
 import useArticles from '@/app/articles/hooks/article';
+import StyledInput from '@/components/form/StyledInput';
+import ContentPlaceholder from '@/components/ContentPlaceholder';
 import clsx from 'clsx';
-import React from 'react';
+import Accent from '@/components/Accent';
+import ArticleList from '@/app/articles/components/ArticleList';
 
-export default function ComponentPage() {
-  const [search, setSearch] = React.useState<string>('');
-
+const ArticlesContainer: React.FC = () => {
+  const [search, setSearch] = useState<string>('');
   const { isError, isLoading, list: articles } = useArticles();
+
   console.log('articlesarticles', articles);
-  const isLoaded = false; // change it  later on
   const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
     setSearch(e.target.value);
   };
+
   if (isError) {
     return (
       <main>
-        <section className={clsx(isLoaded && 'fade-in-start')}>
+        <section className={clsx(isLoading && 'fade-in-start')}>
           <ContentPlaceholder />
         </section>
       </main>
     );
   }
+
   return (
     <main>
-      <section className={clsx(isLoaded && 'fade-in-start')}>
+      <section className={clsx(isLoading && 'fade-in-start')}>
         <div className='layout py-12'>
           <h1 className='text-3xl md:text-5xl' data-fade='0'>
             <Accent>Blog </Accent>
@@ -45,36 +45,11 @@ export default function ComponentPage() {
             value={search}
             type='text'
           />
-          {isLoading ? (
-            <div> </div>
-          ) : (
-            <ul
-              className='mt-4 grid gap-4 sm:grid-cols-2 xl:grid-cols-3'
-              data-fade='5'
-            >
-              {articles.length > 0 ? (
-                articles.map((post, index) => (
-                  <ArticleCard
-                    id={post.id}
-                    key={index}
-                    postDate={post.published_date}
-                    description={post.abstract}
-                    onClick={() => {}}
-                    routeUrl=''
-                    mediaAlt={post.title}
-                    thumbnailUrl={
-                      post.media?.at(0)?.['media-metadata']?.at(2)?.url || ''
-                    }
-                    title={post.title}
-                  />
-                ))
-              ) : (
-                <ContentPlaceholder />
-              )}
-            </ul>
-          )}
+          <ArticleList articles={articles} isLoading={isLoading} />
         </div>
       </section>
     </main>
   );
-}
+};
+
+export default ArticlesContainer;
