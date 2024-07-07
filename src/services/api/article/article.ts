@@ -11,7 +11,12 @@ export class ArticleApi extends Api {
   }
 
   async getArticles(): Promise<
-    { kind: 'ok'; articles: IArticle[] } | GeneralApiProblem
+    | {
+        kind: 'ok';
+        result: IArticle[];
+        num_results?: number;
+      }
+    | GeneralApiProblem
   > {
     try {
       const response = await this.axiosInstance.get<IApiArticlesResponse>(
@@ -20,10 +25,15 @@ export class ArticleApi extends Api {
       );
 
       const articles: IArticle[] = response.data.results ?? [];
-      return { kind: 'ok', articles };
+      return {
+        kind: 'ok',
+        result: articles,
+        num_results: response.data.num_results,
+      };
     } catch (e) {
       const error = e as AxiosError;
       const problem = getGeneralApiProblem(error);
+
       if (problem) return problem;
 
       if (isLocal && e instanceof Error) {

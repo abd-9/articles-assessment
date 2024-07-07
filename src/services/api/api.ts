@@ -5,7 +5,7 @@ import { siteConfig } from '@/constant/config';
 export const DEFAULT_API_CONFIG: ApiConfig = {
   url: siteConfig.url!!,
   timeout: 10000,
-  apiKey: '',
+  apiKey: siteConfig.appKey!!,
 };
 
 export class Api {
