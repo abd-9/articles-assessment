@@ -1,11 +1,17 @@
-interface ArticleMedia {
-  url: string;
+interface IArticleMedia {
   type: string;
   caption: string;
   copyright: string;
+  subtype?: string;
+  'media-metadata'?: {
+    url: string;
+    format: string;
+    height: number;
+    width: number;
+  }[];
 }
 
-interface Article {
+interface IArticle {
   uri: string;
   url: string;
   id: number;
@@ -26,20 +32,20 @@ interface Article {
   org_facet: string[];
   per_facet: string[];
   geo_facet: string[];
-  media: ArticleMedia[];
+  media: IArticleMedia[];
   eta_id: number;
 }
 
-interface ApiResponseBase {
+interface IApiResponseBase {
   status: string;
   copyright: string;
   num_results: number;
 }
 
-interface ApiArticlesResponse extends ApiResponseBase {
-  results: Article[];
+interface IApiArticlesResponse extends IApiResponseBase {
+  results: IArticle[];
 }
 
-interface ApiArticleDetailsResponse extends ApiResponseBase {
-  result: Article;
+interface IApiArticleDetailsResponse extends IApiResponseBase {
+  result: IArticle;
 }

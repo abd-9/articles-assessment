@@ -11,15 +11,15 @@ export class ArticleApi extends Api {
   }
 
   async getArticles(): Promise<
-    { kind: 'ok'; articles: Article[] } | GeneralApiProblem
+    { kind: 'ok'; articles: IArticle[] } | GeneralApiProblem
   > {
     try {
-      const response = await this.axiosInstance.get<ApiArticlesResponse>(
+      const response = await this.axiosInstance.get<IApiArticlesResponse>(
         ARTICLE_URLS.articleList,
         { params: {} }
       );
 
-      const articles: Article[] = response.data.results ?? [];
+      const articles: IArticle[] = response.data.results ?? [];
       return { kind: 'ok', articles };
     } catch (e) {
       const error = e as AxiosError;
@@ -35,12 +35,12 @@ export class ArticleApi extends Api {
 
   async getArticle(
     id: number
-  ): Promise<{ kind: 'ok'; article?: Article } | GeneralApiProblem> {
+  ): Promise<{ kind: 'ok'; article?: IArticle } | GeneralApiProblem> {
     try {
-      const response: AxiosResponse<ApiArticleDetailsResponse> =
+      const response: AxiosResponse<IApiArticleDetailsResponse> =
         await this.axiosInstance.get(`article/${id}`);
 
-      const article: Article = response.data.result;
+      const article: IArticle = response.data.result;
       return { kind: 'ok', article };
     } catch (e) {
       const error = e as AxiosError;

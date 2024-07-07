@@ -1,7 +1,5 @@
 import axios, { AxiosInstance, AxiosResponse } from 'axios';
-import { GeneralApiProblem, getGeneralApiProblem } from './apiProblem';
 import type { ApiConfig, ApiFeedResponse } from './api.types';
-// import type { EpisodeSnapshotIn } from '../../models/Episode';
 import { siteConfig } from '@/constant/config';
 
 export const DEFAULT_API_CONFIG: ApiConfig = {
